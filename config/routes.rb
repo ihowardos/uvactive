@@ -4,9 +4,13 @@ Rails.application.routes.draw do
   devise_for :activists
   devise_for :users, controllers: { registrations: "users/registrations" }
 
-  namespace :admins do
-    
-    root to: "dashboard#show"
+  namespace :cabinet do
+    namespace :admin do
+      resources :managers
+
+      root to: "dashboard#show"
+    end
+
   end
 
   root to: "pages#home"

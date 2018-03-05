@@ -17,14 +17,10 @@ html class="no-js" lang="en"
     == analytics_init if GoogleAnalytics.valid_tracker?
 
   body
+    = render "admin_navigation"
     = render "messages"
 
     main.container
       = yield
-
-    = render "footer"
-
-    javascript:
-      App.currentUserData = #{{current_user.to_json}};
 
     = javascript_include_tag :application

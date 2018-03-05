@@ -3,20 +3,20 @@ puts "=> Seeding started"
 start_time = Time.current
 
 ActiveRecord::Base.transaction do
-  FactoryGirl.create(
-    :user,
+  User.create!(
     email: "user@example.com",
     password: "password",
     password_confirmation: "password",
-    confirmed_at: Time.current
+    confirmed_at: Time.current,
+    full_name: "First Name"
   )
 
-  FactoryGirl.create(
-    :user,
+  User.create!(
     email: "user2@example.com",
     password: "password",
     password_confirmation: "password",
-    confirmed_at: Time.current
+    confirmed_at: Time.current,
+    full_name: "Second Name"
   )
 
   Admin.create!(
@@ -25,6 +25,12 @@ ActiveRecord::Base.transaction do
     confirmed_at: Time.current,
     first_name: "Admin",
     second_name: "Admin"
+  )
+
+  Manager.create!(
+    email: "manager@example.com",
+    password: "password",
+    confirmed_at: Time.current
   )
 end
 

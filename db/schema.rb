@@ -116,13 +116,8 @@ ActiveRecord::Schema.define(version: 20180224192313) do
     t.string "last_sign_in_ip", limit: 255
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name", null: false
-    t.string "second_name", null: false
-    t.string "middle_name"
-    t.integer "entity_id"
-    t.string "phone"
+    t.string "full_name", limit: 255
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["entity_id"], name: "index_users_on_entity_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
