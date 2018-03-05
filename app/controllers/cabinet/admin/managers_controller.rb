@@ -8,6 +8,9 @@ module Cabinet
 
       def new; end
 
+      def create
+      end
+
       private
 
       def fetch_managers

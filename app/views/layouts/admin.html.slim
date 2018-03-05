@@ -20,7 +20,10 @@ html class="no-js" lang="en"
     = render "admin_navigation"
     = render "messages"
 
-    main.container
-      = yield
+    .row
+      .col-md-2.panel-left
+        = render "left_panel"
+      .col-md-10.panel-right
+        = yield
 
     = javascript_include_tag :application
